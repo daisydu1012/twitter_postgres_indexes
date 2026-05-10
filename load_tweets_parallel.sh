@@ -15,7 +15,7 @@ files='/data/tweets/geoTwitter21-01-01.zip
 echo '================================================================================'
 echo 'load pg_denormalized'
 echo '================================================================================'
-# FIXME: copy your solution to the previous problem here
+time parallel ./load_denormalized.sh ::: $files
 
 # NOTE:
 # I have removed the pg_normalized code from this repo.
@@ -26,4 +26,8 @@ echo '==========================================================================
 echo '================================================================================'
 echo 'load pg_normalized_batch'
 echo '================================================================================'
-# FIXME: copy your solution to the previous problem here
+time parallel ./load_batch_normalized.sh ::: $files
+
+
+
+
